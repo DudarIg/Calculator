@@ -22,7 +22,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/button_1"
+            android:id="@+id/digit_one_buttom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -30,7 +30,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_2"
+            android:id="@+id/digit_two_buttom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -38,7 +38,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_3"
+            android:id="@+id/digit_three_buttom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -46,7 +46,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_plus"
+            android:id="@+id/plus_operation_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -60,7 +60,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/button_4"
+            android:id="@+id/digit_four_buttom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -68,7 +68,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_5"
+            android:id="@+id/digit_five_buttom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -76,7 +76,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_6"
+            android:id="@+id/digit_six_buttom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -84,7 +84,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_minus"
+            android:id="@+id/minus_operation_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -99,7 +99,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button_7"
+            android:id="@+id/digit_seven_buttom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -107,7 +107,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_8"
+            android:id="@+id/digit_eight_buttom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -115,7 +115,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_9"
+            android:id="@+id/digit_nine_buttom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -123,7 +123,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_multiply"
+            android:id="@+id/mult_operation_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -137,7 +137,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/button_0"
+            android:id="@+id/digit_zero_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -146,7 +146,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_point"
+            android:id="@+id/point_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -154,7 +154,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/button_share"
+            android:id="@+id/share_operation_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -168,7 +168,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/button_equally"
+            android:id="@+id/calc_result_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
