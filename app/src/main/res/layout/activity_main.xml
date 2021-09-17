@@ -22,7 +22,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/digit_one_buttom"
+            android:id="@+id/digit_one_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -30,7 +30,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_two_buttom"
+            android:id="@+id/digit_two_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -38,7 +38,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_three_buttom"
+            android:id="@+id/digit_three_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -60,7 +60,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/digit_four_buttom"
+            android:id="@+id/digit_four_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -68,7 +68,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_five_buttom"
+            android:id="@+id/digit_five_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -76,7 +76,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_six_buttom"
+            android:id="@+id/digit_six_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -99,7 +99,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/digit_seven_buttom"
+            android:id="@+id/digit_seven_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -107,7 +107,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_eight_buttom"
+            android:id="@+id/digit_eight_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -115,7 +115,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_nine_buttom"
+            android:id="@+id/digit_nine_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
