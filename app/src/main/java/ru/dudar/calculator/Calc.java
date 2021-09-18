@@ -7,6 +7,7 @@ public class Calc {
     private String action; // операция
     private int indexAction; // индекс знака операции в calculat
     private String calculat; // строка калькулятора для вывода на экран
+    private int countPoint; // количество точек в числе
 
     public Calc() {
         this.decimal1 = 0.0f;
@@ -15,26 +16,44 @@ public class Calc {
         this.action = "";
         this.indexAction = 0;
         this.calculat = "";
+        this.countPoint = 0;
     }
 
-    public void setAction() {
-        this.action = "";
+    public void setCountPoint(int countPoint) {
+        this.countPoint = countPoint;
     }
 
-    public void setIndexAction() {
-        this.indexAction = 0;
+    public void setDecimal1(float decimal1) {
+        this.decimal1 = decimal1;
     }
 
-    public void setCalculat() {
-        this.calculat = "";
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public void setIndexAction(int indexAction) {
+        this.indexAction = indexAction;
+    }
+
+    public void setCalculat(String calculat) {
+        this.calculat = calculat;
     }
 
     public void addSign(String sign) {
         calculat += sign;
+    }
 
+    public int getCountPoint() {
+        return countPoint;
     }
 
     public String getCalculat() {
         return calculat;
     }
+
+    public int getIndexAction() {
+        return indexAction;
+    }
+
+
 }

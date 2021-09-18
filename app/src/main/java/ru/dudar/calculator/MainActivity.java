@@ -130,32 +130,54 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void savePointButton(View view) {
-        calc.addSign(".");
+        if (calc.getCountPoint() == 0) {
+            calc.addSign(".");
+            calc.setCountPoint(1);
+        }
         tabloTv.setText(calc.getCalculat());
     }
+
     private void saveResetOperationButton(View view) {
-        calc.setIndexAction();
-        calc.setCalculat();
+        calc.setIndexAction(0);
+        calc.setCalculat("");
+        calc.setAction("");
+        calc.setCountPoint(0);
         tabloTv.setText(calc.getCalculat());
     }
 
     private void savePlusOperationButton(View view) {
-        calc.addSign("+");
-        tabloTv.setText(calc.getCalculat());
-    }
-   private void saveMinusOperationButton(View view) {
-        calc.addSign("-");
-        tabloTv.setText(calc.getCalculat());
-    }
-   private void saveMultOperationButton(View view) {
-        calc.addSign("*");
-        tabloTv.setText(calc.getCalculat());
-    }
-   private void saveShareOperationButton(View view) {
-        calc.addSign("/");
+        if (calc.getCalculat().length() > 0 && calc.getIndexAction() == 0) {
+            saveSetCalc("+");
+        }
         tabloTv.setText(calc.getCalculat());
     }
 
+    private void saveMinusOperationButton(View view) {
+        if (calc.getCalculat().length() > 0 && calc.getIndexAction() == 0) {
+            saveSetCalc("-");
+        }
+        tabloTv.setText(calc.getCalculat());
+    }
 
+    private void saveMultOperationButton(View view) {
+        if (calc.getCalculat().length() > 0 && calc.getIndexAction() == 0) {
+            saveSetCalc("*");
+        }
+        tabloTv.setText(calc.getCalculat());
+    }
+
+    private void saveShareOperationButton(View view) {
+        if (calc.getCalculat().length() > 0 && calc.getIndexAction() == 0) {
+            saveSetCalc("/");
+        }
+        tabloTv.setText(calc.getCalculat());
+    }
+
+    private void saveSetCalc(String operation) {
+        calc.addSign(operation);
+        calc.setAction(operation);
+        calc.setIndexAction(calc.getCalculat().length() - 1);
+        calc.setCountPoint(0);
+    }
 
 }
