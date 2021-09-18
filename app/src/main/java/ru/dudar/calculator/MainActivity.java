@@ -77,7 +77,9 @@ public class MainActivity extends AppCompatActivity {
         multOperationButton.setOnClickListener(this::saveMultOperationButton);
         shareOperationButton.setOnClickListener(this::saveShareOperationButton);
 
+        calcResultButton.setOnClickListener(this::saveCalcResultButton);
     }
+
 
     private void saveDigitOneButton(View view) {
         calc.addSign("1");
@@ -177,6 +179,15 @@ public class MainActivity extends AppCompatActivity {
         calc.addSign(operation);
         calc.setAction(operation);
         calc.setIndexAction(calc.getCalculat().length() - 1);
+        calc.setCountPoint(0);
+    }
+
+    private void saveCalcResultButton(View view) {
+        calc.runResult();
+        tabloTv.setText(String.valueOf(calc.runResult()));
+        calc.setIndexAction(0);
+        calc.setCalculat("");
+        calc.setAction("");
         calc.setCountPoint(0);
     }
 

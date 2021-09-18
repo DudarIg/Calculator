@@ -55,5 +55,31 @@ public class Calc {
         return indexAction;
     }
 
+    public float runResult() {
+        decimal1 = Float.parseFloat(calculat.substring(0, indexAction));
+        decimal2 = Float.parseFloat(calculat.substring(indexAction + 1));
+        switch (action) {
+            case "+": {
+                result = decimal1 + decimal2;
+                break;
+            }
+            case "-": {
+                result = decimal1 - decimal2;
+                break;
+            }
+            case "*": {
+                result = decimal1 * decimal2;
+                break;
+            }
+            case "/": {
+                result = decimal1 / decimal2;
+                break;
+            }
+            default:
+                break;
+
+        }
+        return result;
+    }
 
 }
