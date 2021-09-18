@@ -23,10 +23,12 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="400dp"
             android:layout_marginTop="50dp"
-            android:gravity="center|left"
+            android:layout_marginRight="20dp"
+            android:gravity="right"
             android:paddingRight="10dp"
-            android:text="TextView"
+            android:hint="@string/_0"
             android:textColor="@color/black"
+            android:background="@drawable/my_border"
             android:textSize="@dimen/button_text" />
     </LinearLayout>
 
@@ -193,8 +195,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/button_margin"
-                android:layout_span="4"
+                android:layout_span="3"
                 android:text="@string/_equally"
+                android:textSize="@dimen/button_text" />
+            <Button
+                android:id="@+id/reset_operation_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/button_margin"
+                android:text="@string/_reset"
                 android:textSize="@dimen/button_text" />
         </TableRow>
     </TableLayout>
