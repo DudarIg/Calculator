@@ -3,18 +3,12 @@ package ru.dudar.calculator;
 import java.io.Serializable;
 
 public class Calc implements Serializable {
-    private float decimal1; // первое число
-    private float decimal2; // второе число
-    private float result; // результат
     private String action; // операция
     private int indexAction; // индекс знака операции в calculat
     private String calculat; // строка калькулятора для вывода на экран
     private int countPoint; // количество точек в числе
 
     public Calc() {
-        this.decimal1 = 0.0f;
-        this.decimal2 = 0.0f;
-        this.result = 0.0f;
         this.action = "";
         this.indexAction = 0;
         this.calculat = "";
@@ -53,31 +47,42 @@ public class Calc implements Serializable {
         return indexAction;
     }
 
-    public float runResult() {
-        decimal1 = Float.parseFloat(calculat.substring(0, indexAction));
-        decimal2 = Float.parseFloat(calculat.substring(indexAction + 1));
+    public String runResult() {
+        float decimal1 = Float.parseFloat(calculat.substring(0, indexAction));
+        float decimal2 = Float.parseFloat(calculat.substring(indexAction + 1));
+        float resultFloat = 0.0F;
+
         switch (action) {
             case "+": {
-                result = decimal1 + decimal2;
+                resultFloat = decimal1 + decimal2;
                 break;
             }
             case "-": {
-                result = decimal1 - decimal2;
+                resultFloat = decimal1 - decimal2;
                 break;
             }
             case "*": {
-                result = decimal1 * decimal2;
+                resultFloat = decimal1 * decimal2;
                 break;
             }
             case "/": {
-                result = decimal1 / decimal2;
+                if (decimal2 != 0.0f) {
+                    resultFloat = decimal1 / decimal2;
+                }
+
                 break;
             }
             default:
                 break;
 
         }
-        return result;
+
+        if (decimal2 != 0.0f) {
+            return String.valueOf(resultFloat);
+        } else {
+            return "Деление на 0!!!";
+        }
+
     }
 
 }

@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void saveCalcResultButton(View view) {
         calc.runResult();
-        tabloTv.setText(String.valueOf(calc.runResult()));
+        tabloTv.setText(calc.runResult());
         calc.setIndexAction(0);
         calc.setCalculat("");
         calc.setAction("");
