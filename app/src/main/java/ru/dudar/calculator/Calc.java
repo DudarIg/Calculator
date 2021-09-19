@@ -1,6 +1,8 @@
 package ru.dudar.calculator;
 
-public class Calc {
+import java.io.Serializable;
+
+public class Calc implements Serializable {
     private float decimal1; // первое число
     private float decimal2; // второе число
     private float result; // результат
@@ -21,10 +23,6 @@ public class Calc {
 
     public void setCountPoint(int countPoint) {
         this.countPoint = countPoint;
-    }
-
-    public void setDecimal1(float decimal1) {
-        this.decimal1 = decimal1;
     }
 
     public void setAction(String action) {

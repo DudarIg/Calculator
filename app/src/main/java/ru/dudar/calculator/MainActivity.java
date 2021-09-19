@@ -1,5 +1,6 @@
 package ru.dudar.calculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     public Calc calc = new Calc();
+    private final static String keyCalc = "Calc";
 
     private TextView tabloTv;
 
@@ -80,6 +82,18 @@ public class MainActivity extends AppCompatActivity {
         calcResultButton.setOnClickListener(this::saveCalcResultButton);
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable(keyCalc, calc);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        calc = (Calc) savedInstanceState.getSerializable(keyCalc);
+        tabloTv.setText(calc.getCalculat());
+    }
 
     private void saveDigitOneButton(View view) {
         calc.addSign("1");
