@@ -48,8 +48,19 @@ public class Calc implements Serializable {
     }
 
     public String runResult() {
-        float decimal1 = Float.parseFloat(calculat.substring(0, indexAction));
-        float decimal2 = Float.parseFloat(calculat.substring(indexAction + 1));
+
+        if (indexAction == 0) {
+            return "";
+        }
+        String val1 = calculat.substring(0, indexAction);
+        String val2 = calculat.substring(indexAction + 1);
+
+        if (val2.length() == 0 ) {
+            return "Операция невозможна";
+        }
+
+        float decimal1 = Float.parseFloat(val1);
+        float decimal2 = Float.parseFloat(val2);
         float resultFloat = 0.0F;
 
         switch (action) {
