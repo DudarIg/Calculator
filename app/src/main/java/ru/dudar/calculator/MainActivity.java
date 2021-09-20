@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     public Calc calc = new Calc();
+
     private final static String keyCalc = "Calc";
 
     private TextView tabloTv;
@@ -156,7 +157,6 @@ public class MainActivity extends AppCompatActivity {
     private void saveResetOperationButton(View view) {
         calc.setIndexAction(0);
         calc.setCalculat("");
-        calc.setAction("");
         calc.setCountPoint(0);
         tabloTv.setText(calc.getCalculat());
     }
@@ -164,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
     private void savePlusOperationButton(View view) {
         if (calc.getCalculat().length() > 0 && calc.getIndexAction() == 0) {
             saveSetCalc("+");
+            calc.setAction(Operation.PLUS);
         }
         tabloTv.setText(calc.getCalculat());
     }
@@ -171,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
     private void saveMinusOperationButton(View view) {
         if (calc.getCalculat().length() > 0 && calc.getIndexAction() == 0) {
             saveSetCalc("-");
+            calc.setAction(Operation.MINUS);
         }
         tabloTv.setText(calc.getCalculat());
     }
@@ -178,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
     private void saveMultOperationButton(View view) {
         if (calc.getCalculat().length() > 0 && calc.getIndexAction() == 0) {
             saveSetCalc("*");
+            calc.setAction(Operation.MULT);
         }
         tabloTv.setText(calc.getCalculat());
     }
@@ -185,13 +188,13 @@ public class MainActivity extends AppCompatActivity {
     private void saveShareOperationButton(View view) {
         if (calc.getCalculat().length() > 0 && calc.getIndexAction() == 0) {
             saveSetCalc("÷");
+            calc.setAction(Operation.SHARE);
         }
         tabloTv.setText(calc.getCalculat());
     }
 
     private void saveSetCalc(String operation) {
         calc.addSign(operation);
-        calc.setAction(operation);
         calc.setIndexAction(calc.getCalculat().length() - 1);
         calc.setCountPoint(0);
     }
@@ -201,7 +204,6 @@ public class MainActivity extends AppCompatActivity {
         tabloTv.setText(calc.runResult());
         calc.setIndexAction(0);
         calc.setCalculat("");
-        calc.setAction("");
         calc.setCountPoint(0);
     }
 

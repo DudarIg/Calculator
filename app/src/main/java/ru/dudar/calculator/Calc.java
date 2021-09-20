@@ -3,13 +3,12 @@ package ru.dudar.calculator;
 import java.io.Serializable;
 
 public class Calc implements Serializable {
-    private String action; // операция
+    private Operation action; // операция
     private int indexAction; // индекс знака операции в calculat
     private String calculat; // строка калькулятора для вывода на экран
     private int countPoint; // количество точек в числе
 
     public Calc() {
-        this.action = "";
         this.indexAction = 0;
         this.calculat = "";
         this.countPoint = 0;
@@ -19,7 +18,7 @@ public class Calc implements Serializable {
         this.countPoint = countPoint;
     }
 
-    public void setAction(String action) {
+    public void setAction(Operation action) {
         this.action = action;
     }
 
@@ -64,19 +63,19 @@ public class Calc implements Serializable {
         float resultFloat = 0.0F;
 
         switch (action) {
-            case "+": {
+            case PLUS: {
                 resultFloat = decimal1 + decimal2;
                 break;
             }
-            case "-": {
+            case MINUS: {
                 resultFloat = decimal1 - decimal2;
                 break;
             }
-            case "*": {
+            case MULT: {
                 resultFloat = decimal1 * decimal2;
                 break;
             }
-            case "÷": {
+            case SHARE: {
                 if (decimal2 != 0.0f) {
                     resultFloat = decimal1 / decimal2;
                 }
