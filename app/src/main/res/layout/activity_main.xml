@@ -32,22 +32,22 @@
 
         <TableRow style="@style/CalcTableRow">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_one_button"
                 style="@style/CalcButton"
                 android:text="@string/_1" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_two_button"
                 style="@style/CalcButton"
                 android:text="@string/_2" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_three_button"
                 style="@style/CalcButton"
                 android:text="@string/_3" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/plus_operation_button"
                 android:text="@string/_plus"
                 style="@style/CalcButton.Sign"/>
@@ -55,22 +55,22 @@
 
         <TableRow style="@style/CalcTableRow">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_four_button"
                 style="@style/CalcButton"
                 android:text="@string/_4" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_five_button"
                 style="@style/CalcButton"
                 android:text="@string/_5" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_six_button"
                 style="@style/CalcButton"
                 android:text="@string/_6" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/minus_operation_button"
                 android:text="@string/_minus"
                 style="@style/CalcButton.Sign" />
@@ -78,22 +78,22 @@
 
         <TableRow style="@style/CalcTableRow">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_seven_button"
                 style="@style/CalcButton"
                 android:text="@string/_7" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_eight_button"
                 style="@style/CalcButton"
                 android:text="@string/_8" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_nine_button"
                 style="@style/CalcButton"
                 android:text="@string/_9" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/mult_operation_button"
                 android:text="@string/_multiply"
                 style="@style/CalcButton.Sign" />
@@ -101,18 +101,18 @@
 
         <TableRow style="@style/CalcTableRow">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/digit_zero_button"
                 style="@style/CalcButton"
                 android:layout_span="2"
                 android:text="@string/_0" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/point_button"
                 style="@style/CalcButton"
                 android:text="@string/_point" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/share_operation_button"
                 android:text="@string/_share"
                 style="@style/CalcButton.Sign" />
@@ -121,13 +121,14 @@
 
         <TableRow style="@style/CalcTableRow">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/calc_result_button"
                 style="@style/CalcButton.Result"
                 android:layout_span="3"
+                app:backgroundTint="@color/purple_700"
                 android:text="@string/_equally" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/reset_operation_button"
                 android:text="@string/_reset"
                 style="@style/CalcButton.Sign"/>

@@ -4,4 +4,6 @@
     <dimen name="button_margin">2dp</dimen>
     <dimen name="margin_panel_left_right">20dp</dimen>
     <dimen name="margin_top">50dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="margin_left">400dp</dimen>
 </resources>
