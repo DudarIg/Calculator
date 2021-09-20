@@ -170,9 +170,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveMinusOperationButton(View view) {
+
         if (calc.getCalculat().length() > 0 && calc.getIndexAction() == 0) {
             saveSetCalc("-");
             calc.setAction(Operation.MINUS);
+        }
+        if (calc.getCalculat().length() == 0 && calc.getIndexAction() == 0) {
+            calc.addSign("-");
         }
         tabloTv.setText(calc.getCalculat());
     }
@@ -200,7 +204,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveCalcResultButton(View view) {
-        calc.runResult();
         tabloTv.setText(calc.runResult());
         calc.setIndexAction(0);
         calc.setCalculat("");
