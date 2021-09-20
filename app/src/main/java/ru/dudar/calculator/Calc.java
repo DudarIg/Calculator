@@ -76,7 +76,7 @@ public class Calc implements Serializable {
                 resultFloat = decimal1 * decimal2;
                 break;
             }
-            case "/": {
+            case "÷": {
                 if (decimal2 != 0.0f) {
                     resultFloat = decimal1 / decimal2;
                 }

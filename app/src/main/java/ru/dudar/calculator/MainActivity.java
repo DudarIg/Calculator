@@ -184,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void saveShareOperationButton(View view) {
         if (calc.getCalculat().length() > 0 && calc.getIndexAction() == 0) {
-            saveSetCalc("/");
+            saveSetCalc("÷");
         }
         tabloTv.setText(calc.getCalculat());
     }
