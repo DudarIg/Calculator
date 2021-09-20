@@ -4,6 +4,20 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <TextView
+        android:id="@+id/tablo_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:gravity="right"
+        android:hint="@string/_0"
+        android:paddingRight="10dp"
+        android:textColor="@color/black"
+        android:background="@drawable/my_border"
+        android:textSize="@dimen/button_text" />
+
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,7 +36,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/digit_one_buttom"
+            android:id="@+id/digit_one_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -30,7 +44,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_two_buttom"
+            android:id="@+id/digit_two_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -38,7 +52,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_three_buttom"
+            android:id="@+id/digit_three_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -60,7 +74,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/digit_four_buttom"
+            android:id="@+id/digit_four_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -68,7 +82,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_five_buttom"
+            android:id="@+id/digit_five_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -76,7 +90,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_six_buttom"
+            android:id="@+id/digit_six_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -99,7 +113,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/digit_seven_buttom"
+            android:id="@+id/digit_seven_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -107,7 +121,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_eight_buttom"
+            android:id="@+id/digit_eight_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -115,7 +129,7 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/digit_nine_buttom"
+            android:id="@+id/digit_nine_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
@@ -160,6 +174,7 @@
             android:layout_margin="@dimen/button_margin"
             android:text="@string/_share"
             android:textSize="@dimen/button_text" />
+
     </TableRow>
 
     <TableRow
@@ -172,8 +187,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/button_margin"
-            android:layout_span="4"
+            android:layout_span="3"
             android:text="@string/_equally"
+            android:textSize="@dimen/button_text" />
+        <Button
+            android:id="@+id/reset_operation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin"
+            android:text="@string/_reset"
             android:textSize="@dimen/button_text" />
     </TableRow>
 </TableLayout>
