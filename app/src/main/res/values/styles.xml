@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CalcButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:textSize">@dimen/button_text</item>
+    </style>
+    <style name="CalcTableRow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="CalcButton.Sign">
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+    <style name="CalcButton.Result">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+</resources>
