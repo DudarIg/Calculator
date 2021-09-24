@@ -46,7 +46,7 @@ public class Calc implements Serializable {
         return indexAction;
     }
 
-    public String runResult() {
+    public String runResult(int s) {
 
         if (indexAction == 0) {
             return "";
@@ -79,7 +79,6 @@ public class Calc implements Serializable {
                 if (decimal2 != 0.0f) {
                     resultFloat = decimal1 / decimal2;
                 }
-
                 break;
             }
             default:
@@ -88,7 +87,9 @@ public class Calc implements Serializable {
         }
 
         if (decimal2 != 0.0f) {
-            return String.valueOf(resultFloat);
+            return String.format("%."+ Integer.toString(s) +"f", resultFloat);
+
+                    //String.valueOf(resultFloat);
         } else {
             return "Деление на 0!!!";
         }

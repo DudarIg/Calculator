@@ -1,18 +1,28 @@
 package ru.dudar.calculator;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     public Calc calc = new Calc();
+    public Settings setData = new Settings();
 
     private final static String keyCalc = "Calc";
+    private final static int REQUEST_CODE = 32;
+
 
     private TextView tabloTv;
 
@@ -41,46 +51,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tabloTv = findViewById(R.id.tablo_tv);
+        initView();
+        setupButton();
+    }
 
-        digitOneButton = findViewById(R.id.digit_one_button);
-        digitTwoButton = findViewById(R.id.digit_two_button);
-        digitThreeButton = findViewById(R.id.digit_three_button);
-        plusOperationButton = findViewById(R.id.plus_operation_button);
-        digitFourButton = findViewById(R.id.digit_four_button);
-        digitFiveButton = findViewById(R.id.digit_five_button);
-        digitSixButton = findViewById(R.id.digit_six_button);
-        minusOperationButton = findViewById(R.id.minus_operation_button);
-        digitSevenButton = findViewById(R.id.digit_seven_button);
-        digitEightButton = findViewById(R.id.digit_eight_button);
-        digitNineButton = findViewById(R.id.digit_nine_button);
-        digitZeroButton = findViewById(R.id.digit_zero_button);
-        pointButton = findViewById(R.id.point_button);
-        multOperationButton = findViewById(R.id.mult_operation_button);
-        shareOperationButton = findViewById(R.id.share_operation_button);
-        resetOperationButton = findViewById(R.id.reset_operation_button);
-        calcResultButton = findViewById(R.id.calc_result_button);
+    private void readSetScreen(Settings setData) {
+        if (setData.colorScheme == 1) {
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_NO);
+        }
+        if (setData.colorScheme == 2) {
+            AppCompatDelegate.setDefaultNightMode(
+                    AppCompatDelegate.MODE_NIGHT_YES);
+        }
+    }
 
-        digitOneButton.setOnClickListener(this::saveDigitOneButton);
-        digitTwoButton.setOnClickListener(this::saveDigitTwoButton);
-        digitThreeButton.setOnClickListener(this::saveDigitThreeButton);
 
-        digitFourButton.setOnClickListener(this::saveDigitFourButton);
-        digitFiveButton.setOnClickListener(this::saveDigitFiveButton);
-        digitSixButton.setOnClickListener(this::saveDigitSixButton);
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent = new Intent(this, SetActivity.class);
+        intent.putExtra(SetActivity.SET_KEY_IN, setData);
+        startActivityForResult(intent, REQUEST_CODE);
+        return true;
 
-        digitSevenButton.setOnClickListener(this::saveDigitSevenButton);
-        digitEightButton.setOnClickListener(this::saveDigitEightButton);
-        digitNineButton.setOnClickListener(this::saveDigitNineButton);
-        digitZeroButton.setOnClickListener(this::saveDigitZeroButton);
-        pointButton.setOnClickListener(this::savePointButton);
+    }
 
-        resetOperationButton.setOnClickListener(this::saveResetOperationButton);
-        plusOperationButton.setOnClickListener(this::savePlusOperationButton);
-        minusOperationButton.setOnClickListener(this::saveMinusOperationButton);
-        multOperationButton.setOnClickListener(this::saveMultOperationButton);
-        shareOperationButton.setOnClickListener(this::saveShareOperationButton);
-
-        calcResultButton.setOnClickListener(this::saveCalcResultButton);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            setData = (Settings) data.getSerializableExtra(SetActivity.SET_KEY_OUT);
+          //  int tt = setData.precise;
+            readSetScreen(setData);
+          //  setData.precise = tt;
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     @Override
@@ -204,10 +209,60 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveCalcResultButton(View view) {
-        tabloTv.setText(calc.runResult());
+        tabloTv.setText(calc.runResult(setData.precise));
         calc.setIndexAction(0);
         calc.setCalculat("");
         calc.setCountPoint(0);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void setupButton() {
+        digitOneButton.setOnClickListener(this::saveDigitOneButton);
+        digitTwoButton.setOnClickListener(this::saveDigitTwoButton);
+        digitThreeButton.setOnClickListener(this::saveDigitThreeButton);
+
+        digitFourButton.setOnClickListener(this::saveDigitFourButton);
+        digitFiveButton.setOnClickListener(this::saveDigitFiveButton);
+        digitSixButton.setOnClickListener(this::saveDigitSixButton);
+
+        digitSevenButton.setOnClickListener(this::saveDigitSevenButton);
+        digitEightButton.setOnClickListener(this::saveDigitEightButton);
+        digitNineButton.setOnClickListener(this::saveDigitNineButton);
+        digitZeroButton.setOnClickListener(this::saveDigitZeroButton);
+        pointButton.setOnClickListener(this::savePointButton);
+
+        resetOperationButton.setOnClickListener(this::saveResetOperationButton);
+        plusOperationButton.setOnClickListener(this::savePlusOperationButton);
+        minusOperationButton.setOnClickListener(this::saveMinusOperationButton);
+        multOperationButton.setOnClickListener(this::saveMultOperationButton);
+        shareOperationButton.setOnClickListener(this::saveShareOperationButton);
+
+        calcResultButton.setOnClickListener(this::saveCalcResultButton);
+    }
+
+    private void initView() {
+        digitOneButton = findViewById(R.id.digit_one_button);
+        digitTwoButton = findViewById(R.id.digit_two_button);
+        digitThreeButton = findViewById(R.id.digit_three_button);
+        plusOperationButton = findViewById(R.id.plus_operation_button);
+        digitFourButton = findViewById(R.id.digit_four_button);
+        digitFiveButton = findViewById(R.id.digit_five_button);
+        digitSixButton = findViewById(R.id.digit_six_button);
+        minusOperationButton = findViewById(R.id.minus_operation_button);
+        digitSevenButton = findViewById(R.id.digit_seven_button);
+        digitEightButton = findViewById(R.id.digit_eight_button);
+        digitNineButton = findViewById(R.id.digit_nine_button);
+        digitZeroButton = findViewById(R.id.digit_zero_button);
+        pointButton = findViewById(R.id.point_button);
+        multOperationButton = findViewById(R.id.mult_operation_button);
+        shareOperationButton = findViewById(R.id.share_operation_button);
+        resetOperationButton = findViewById(R.id.reset_operation_button);
+        calcResultButton = findViewById(R.id.calc_result_button);
     }
 
 }

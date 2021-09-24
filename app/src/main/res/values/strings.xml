@@ -17,4 +17,10 @@
     <string name="_share">÷</string>
     <string name="_equally">=</string>
     <string name="_reset">C</string>
+    <string name="settings">set</string>
+    <string name="presice">Точность вычисления</string>
+    <string name="_1_znak">1 знак после запятой</string>
+    <string name="_3_znaka">3 знака после запятой</string>
+    <string name="_5_znaka">5 знаков после запятой</string>
+    <string name="save_button">Сохранить</string>
 </resources>
