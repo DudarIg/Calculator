@@ -7,7 +7,7 @@ public class Calc implements Serializable {
     private int indexAction; // индекс знака операции в calculat
     private String calculat; // строка калькулятора для вывода на экран
     private int countPoint; // количество точек в числе
-    private String result;
+    private String result;  // строка результата на экране
 
     public Calc() {
         this.indexAction = 0;
@@ -60,14 +60,12 @@ public class Calc implements Serializable {
 
         if (indexAction == 0) {
             setResult("");
-            //return "";
         }
         String val1 = calculat.substring(0, indexAction);
         String val2 = calculat.substring(indexAction + 1);
 
         if (val2.length() == 0) {
             setResult("Операция невозможна");
-            //return "Операция невозможна";
         }
 
         float decimal1 = Float.parseFloat(val1);
@@ -100,12 +98,8 @@ public class Calc implements Serializable {
 
         if (decimal2 != 0.0f) {
            setResult(String.format("%." + Integer.toString(s) + "f", resultFloat));
-            // return String.format("%." + Integer.toString(s) + "f", resultFloat);
-
-            //String.valueOf(resultFloat);
         } else {
            setResult("Деление на 0!!!");
-            // return "Деление на 0!!!";
         }
 
     }
