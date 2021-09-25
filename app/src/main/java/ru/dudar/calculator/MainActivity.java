@@ -98,7 +98,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         calc = (Calc) savedInstanceState.getSerializable(keyCalc);
-        tabloTv.setText(calc.getCalculat());
+        if (calc.getIndexAction() == 0) {
+            tabloTv.setText(calc.getResult());
+        } else {
+            tabloTv.setText(calc.getCalculat());
+        }
+
     }
 
     private void saveDigitOneButton(View view) {
@@ -209,7 +214,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveCalcResultButton(View view) {
-        tabloTv.setText(calc.runResult(setData.precise));
+        calc.runResult(setData.precise);
+        tabloTv.setText(calc.getResult());
         calc.setIndexAction(0);
         calc.setCalculat("");
         calc.setCountPoint(0);
