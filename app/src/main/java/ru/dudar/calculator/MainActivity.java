@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readSetScreen(Settings setData) {
+
         if (setData.colorScheme == 1) {
             AppCompatDelegate.setDefaultNightMode(
                     AppCompatDelegate.MODE_NIGHT_NO);
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(
                     AppCompatDelegate.MODE_NIGHT_YES);
         }
+
     }
 
 
@@ -80,9 +82,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             setData = (Settings) data.getSerializableExtra(SetActivity.SET_KEY_OUT);
-          //  int tt = setData.precise;
             readSetScreen(setData);
-          //  setData.precise = tt;
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
